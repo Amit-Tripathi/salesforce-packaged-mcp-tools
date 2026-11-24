@@ -1,0 +1,22 @@
+{
+  "packageDirectories": [
+    {
+      "versionName": "ver 1.1",
+      "versionNumber": "1.1.0.NEXT",
+      "path": "force-app",
+      "default": true,
+      "package": "MCP Apex Tools",
+      "versionDescription": "Flat MCP tool outputs: nested Apex-defined types cannot be serialized by invocable actions/MCP",
+      "ancestorVersion": "HIGHEST"
+    }
+  ],
+  "name": "sf-mcp-apex-eca",
+  "namespace": "ISV_Demo",
+  "sfdcLoginUrl": "https://login.salesforce.com",
+  "sourceApiVersion": "68.0",
+  "packageAliases": {
+    "MCP Apex Tools": "0Hohm0000000eWvCAI",
+    "MCP Apex Tools@1.0.0-1": "04thm000004ChTVAA0",
+    "MCP Apex Tools@1.1.0-1": "04thm000004ChV7AAK"
+  }
+}

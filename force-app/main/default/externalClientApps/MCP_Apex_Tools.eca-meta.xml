@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ExternalClientApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <contactEmail>mcp-apex-tools@example.com</contactEmail>
+    <description>OAuth client for MCP clients (Claude, ChatGPT, Claude Code, Codex) calling Salesforce Hosted MCP Servers that expose the MCP Apex Tools actions.</description>
+    <distributionState>Packaged</distributionState>
+    <isProtected>false</isProtected>
+    <label>MCP Apex Tools</label>
+    <orgScopedExternalApp>00Dhm000004133B:MCP_Apex_Tools</orgScopedExternalApp>
+</ExternalClientApplication>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  NOT part of the package: ISV managed packages can't ship MCP server configurations yet.
+  A subscriber admin deploys this (see README: sf project deploy start with source-dir post-install/mcp) after installing the package (or builds the same server in
+  Setup > Integrations > Salesforce MCP Servers), then activates it.
+  Namespace prefix: ISV_Demo.
+-->
+<McpServerDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Account health insights (pipeline, weighted forecast, cases) plus create, read, update and delete tools for MCP Demo records.</description>
+    <masterLabel>Account Insights</masterLabel>
+    <tools>
+        <apiDefinition>
+            <apiIdentifier>aa:apex-ISV_Demo__McpAccountInsights</apiIdentifier>
+            <apiSource>API_CATALOG</apiSource>
+            <operation>ISV_Demo__McpAccountInsights</operation>
+        </apiDefinition>
+        <descriptionOverride>Returns a health snapshot for an account given its name: open pipeline (total and probability-weighted), top open deals, open and high-priority support cases, and an overall health rating. Supports partial account names.</descriptionOverride>
+        <toolName>getAccountInsights</toolName>
+        <toolTitle>Get Account Insights</toolTitle>
+    </tools>
+    <tools>
+        <apiDefinition>
+            <apiIdentifier>aa:apex-ISV_Demo__McpDemoCreate</apiIdentifier>
+            <apiSource>API_CATALOG</apiSource>
+            <operation>ISV_Demo__McpDemoCreate</operation>
+        </apiDefinition>
+        <descriptionOverride>Creates a new MCP Demo record. Requires a name; description, status (New, In Progress, Done), amount and due date are optional. Returns the new record with its recordId.</descriptionOverride>
+        <toolName>createMcpDemoRecord</toolName>
+        <toolTitle>Create MCP Demo Record</toolTitle>
+    </tools>
+    <tools>
+        <apiDefinition>
+            <apiIdentifier>aa:apex-ISV_Demo__McpDemoRead</apiIdentifier>
+            <apiSource>API_CATALOG</apiSource>
+            <operation>ISV_Demo__McpDemoRead</operation>
+        </apiDefinition>
+        <descriptionOverride>Reads MCP Demo records. Pass recordId to fetch one record, or filter by nameContains and/or status to search. Returns up to maxRecords (default 10, max 50).</descriptionOverride>
+        <toolName>readMcpDemoRecords</toolName>
+        <toolTitle>Read MCP Demo Records</toolTitle>
+    </tools>
+    <tools>
+        <apiDefinition>
+            <apiIdentifier>aa:apex-ISV_Demo__McpDemoUpdate</apiIdentifier>
+            <apiSource>API_CATALOG</apiSource>
+            <operation>ISV_Demo__McpDemoUpdate</operation>
+        </apiDefinition>
+        <descriptionOverride>Updates an existing MCP Demo record by recordId. Only the fields you pass are changed. Returns the updated record.</descriptionOverride>
+        <toolName>updateMcpDemoRecord</toolName>
+        <toolTitle>Update MCP Demo Record</toolTitle>
+    </tools>
+    <tools>
+        <apiDefinition>
+            <apiIdentifier>aa:apex-ISV_Demo__McpDemoDelete</apiIdentifier>
+            <apiSource>API_CATALOG</apiSource>
+            <operation>ISV_Demo__McpDemoDelete</operation>
+        </apiDefinition>
+        <descriptionOverride>Deletes an MCP Demo record by recordId (it goes to the Recycle Bin). Confirm with the user before calling.</descriptionOverride>
+        <toolName>deleteMcpDemoRecord</toolName>
+        <toolTitle>Delete MCP Demo Record</toolTitle>
+    </tools>
+</McpServerDefinition>
