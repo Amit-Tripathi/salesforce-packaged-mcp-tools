@@ -73,7 +73,7 @@ sf package version create --package "MCP Apex Tools" --code-coverage --installat
 sf package version promote --package "MCP Apex Tools@<version>"   # permanent; needed for production installs
 ```
 
-**External Client App.** You can't create one in a scratch org. Create it in your Dev Hub (or deploy `force-app/main/default/externalClientApps` and `extlClntAppOauthSettings` there, with your own `contactEmail`), then retrieve it. The files committed here contain the publisher's org Ids in `orgScopedExternalApp` and `oauthLink`, so replace them with the values you retrieve. The global OAuth settings (consumer key and secret, callback URLs, PKCE, **JWT-based access tokens**) stay in the Dev Hub. Keep them in the gitignored `pbo-only/` folder, and never in the package. Installed orgs use the Dev Hub's settings, so changing them there needs no new package version.
+**External Client App.** You can't create one in a scratch org. Create it in your Dev Hub (or deploy `force-app/main/default/externalClientApps` and `extlClntAppOauthSettings` there, with your own `contactEmail`), then retrieve it. The files committed here contain the publisher's org Ids in `orgScopedExternalApp` and `oauthLink`, so replace them with the values you retrieve. The global OAuth settings (consumer key and secret, callback URLs, PKCE, **JWT-based access tokens**) stay in the Dev Hub. Keep them in the gitignored `pbo-only/` folder, and never in the package. **This repo never contains an OAuth client ID or secret.** `scripts/check-no-oauth-secrets.sh` runs as a pre-commit hook and blocks commits that add one. Installed orgs use the Dev Hub's settings, so changing them there needs no new package version.
 
 **Before you package a tool,** call it through the REST actions API:
 
